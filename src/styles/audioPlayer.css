@@ -1,0 +1,90 @@
+.audio {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.audio audio {
+    width: 100%;
+    border: none;
+
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 7px;
+    cursor: pointer;
+    background: linear-gradient(to right, rgba(0, 125, 181, 0.6) , rgba(0, 125, 181, 0.2) , #d0cfcf);
+}
+
+.current-time-music {
+    width: 100%;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px auto;
+
+}
+.payer-bar {
+    display: flex;
+    align-items: center;
+    margin: 0 auto 40px auto;
+}
+.payer-bar i {
+    margin: 0 10px;
+    font-size: 30px;
+}
+.payer-bar i:hover {
+    color: #6f6ff5;
+}
+
+
+.progress {
+    margin: 0 5px 0 5px;
+    flex: 1;
+}
+.progress input {
+    width: 100%;
+}
+
+.image-box {
+    position: relative;
+    top: 45px;
+    left: -37%;
+    width: 400px;
+    height: 400px;
+}
+.image-box::after {
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%)  translateY(-50%);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    animation: rotate 20s linear;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+    user-select: none;
+}
+.image-box img.playingImg {
+    animation-play-state: running;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
